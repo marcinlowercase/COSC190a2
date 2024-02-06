@@ -11,9 +11,9 @@ public class Q5 {
     public static void main(String[] args) {
         Integer[] aVals = {2, 7, 10, 1};
 
-        System.out.printf("The first value is %d\n", doOperation(getFirst, aVals));
-        System.out.printf("The Last value is %d\n", doOperation(getLast, aVals));
-        System.out.printf("The Average value is %d\n", doOperation(getAverage, aVals));
+//        System.out.printf("The first value is %d\n", doOperation(getFirst, aVals));
+//        System.out.printf("The Last value is %d\n", doOperation(getLast, aVals));
+//        System.out.printf("The Average value is %d\n", doOperation(getAverage, aVals));
 
     }
 
