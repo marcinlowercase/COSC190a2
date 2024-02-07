@@ -1,5 +1,15 @@
 package cosc190_assignment_2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
 public class RecursiveMethods {
 
     public static String reverse(String sText) {
@@ -25,6 +35,39 @@ public class RecursiveMethods {
         return onlyBin.toString();
     }
 
-    public static void replaceAll(String oldWord, String newWord, String filePath) {
+    public static void replaceAll(String oldWord, String newWord, String filePath) throws FileNotFoundException {
+
+        File file = new File(filePath);
+
+        if (file.isFile()){
+            if (file.getName().contains(".txt")){
+                //replace word
+                Scanner scanner =  new Scanner(file);
+                String[] words = scanner.nextLine().split(" ");
+
+            }
+        } else {
+            // create an array of File obj of subFolder and .txt file
+            File[] validFile = file.listFiles(f -> validFile(f));
+            for (File f : validFile){
+                replaceAll(oldWord, newWord, f.getAbsolutePath());
+            }
+        }
+
     }
+
+    private static boolean validFile(File file){
+        if (file.isFile()){
+            if (file.getName().endsWith(".txt")){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
 }
+
+
