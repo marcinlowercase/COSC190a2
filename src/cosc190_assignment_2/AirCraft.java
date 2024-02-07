@@ -1,7 +1,6 @@
 package cosc190_assignment_2;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class AirCraft {
     private String type;
@@ -9,27 +8,6 @@ public class AirCraft {
     private String name;
     private int inService;
     private String country;
-
-//    public AirCraft(String[] sArgs) {
-//        if ( sArgs.length == 5){
-//            this.type = sArgs[TYPE];
-//            this.subTypes.add(sArgs[SUBTYPES]);
-//            this.name = sArgs[NAME];
-//            this.inService = Integer.parseInt(sArgs[INSERVICE]);
-//            this.country = sArgs[COUNTRY];
-//        } else {
-//            this.type = sArgs[0];
-//            String subRaw = Arrays.toString(Arrays.copyOfRange(sArgs,1, sArgs.length - 3));
-//            this.subTypes = Arrays.stream(subRaw.split(",|and"))
-//                    .map(x -> x.replaceAll("[\"\\[\\]]", "" ))
-//                    .map(String::trim)
-//                    .map(s -> s.substring(0,1).toUpperCase() + s.substring(1))
-//                    .toList();
-//            this.name = sArgs[sArgs.length - 3];
-//            this.inService = Integer.parseInt(sArgs[sArgs.length - 2]);
-//            this.country = sArgs[sArgs.length - 1];
-//        }
-//    }
 
     public AirCraft(String[] sArgs) {
             this.type = sArgs[0];

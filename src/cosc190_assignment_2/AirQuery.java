@@ -15,14 +15,14 @@ public class AirQuery {
         try (Stream<String> lines = Files.lines(Paths.get(path))){
             return lines.skip(1)
                     .map(line -> line.split(","))
-                    .map(arr -> new AirCraft(arr))
+                    .map(AirCraft::new)
                     .collect(Collectors.toList());
         }
     }
 
     public static List<String> getCountryList(List<AirCraft> airCraftList) {
         return airCraftList.stream()
-                .map(airCraft -> airCraft.getCountry())
+                .map(AirCraft::getCountry)
                 .distinct()
                 .sorted()
                 .collect(Collectors.toList());
@@ -30,7 +30,7 @@ public class AirQuery {
 
     public static ArrayList<String> identifyTypes(List<AirCraft> airCraftList) {
         return (ArrayList<String>) airCraftList.stream()
-                .map(airCraft -> airCraft.getType())
+                .map(AirCraft::getType)
                 .distinct()
                 .collect(Collectors.toList());
     }
@@ -58,7 +58,7 @@ public class AirQuery {
         return airCraftList.stream()
                 .filter(a -> a.isOfSubtype(subType))
                 .filter(y -> y.getInService()== year)
-                .map(n -> n.getName())
+                .map(AirCraft::getName)
                 .collect(Collectors.toList());
 
     }
